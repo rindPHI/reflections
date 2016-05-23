@@ -1,5 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.reflections</groupId>
@@ -8,7 +8,7 @@
 
     <name>Reflections</name>
     <description>Reflections - a Java runtime metadata analysis</description>
-    <url>http://github.com/ronmamo/reflections</url>
+    <url>http://github.com/rindPHI/reflections</url>
 
     <licenses>
         <license>
@@ -22,12 +22,12 @@
     </licenses>
 
     <scm>
-        <url>https://github.com/ronmamo/reflections/issues</url>
-        <connection>scm:git:git://github.com/ronmamo/reflections.git</connection>
+        <url>https://github.com/rindPHI/reflections/issues</url>
+        <connection>scm:git:git://github.com/rindPHI/reflections.git</connection>
     </scm>
 
     <issueManagement>
-        <url>https://github.com/ronmamo/reflections/issues</url>
+        <url>https://github.com/rindPHI/reflections/issues</url>
         <system>GitHub Issues</system>
     </issueManagement>
 
@@ -48,7 +48,7 @@
         <repository>
             <uniqueVersion>false</uniqueVersion>
             <id>github</id>
-            <url>scm:git:ssh://git@github.com/ronmamo/reflections.git</url>
+            <url>scm:git:ssh://git@github.com/rindPHI/reflections.git</url>
         </repository>
     </distributionManagement>
 
@@ -231,6 +231,25 @@
 
     <build>
         <plugins>
+
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>2.6</version>
+        <configuration>
+          <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+        </configuration>
+        <executions>
+          <execution>
+            <id>make-assembly</id> <!-- this is used for inheritance merges -->
+            <phase>package</phase> <!-- bind to the packaging phase -->
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-clean-plugin</artifactId>

@@ -63,7 +63,7 @@ import static org.reflections.util.Utils.*;
  * <pre>
  *      Reflections reflections = new Reflections("my.package.prefix");
  *      //or
- *      Reflections reflections = new Reflections(ClasspathHelper.forPackage("my.package.prefix"), 
+ *      Reflections reflections = new Reflections(ClasspathHelper.forPackage("my.package.prefix"),
  *            new SubTypesScanner(), new TypesAnnotationScanner(), new FilterBuilder().include(...), ...);
  *
  *       //or using the ConfigurationBuilder
@@ -92,7 +92,7 @@ import static org.reflections.util.Utils.*;
  *       Set&#60Member> methodUsage =      reflections.getMethodUsage(Method.class);
  *       Set&#60Member> constructorUsage = reflections.getConstructorUsage(Constructor.class);
  * </pre>
- * <p>You can use other scanners defined in Reflections as well, such as: SubTypesScanner, TypeAnnotationsScanner (both default), 
+ * <p>You can use other scanners defined in Reflections as well, such as: SubTypesScanner, TypeAnnotationsScanner (both default),
  * ResourcesScanner, MethodAnnotationsScanner, ConstructorAnnotationsScanner, FieldAnnotationsScanner,
  * MethodParameterScanner, MethodParameterNamesScanner, MemberUsageScanner or any custom scanner.
  * <p>Use {@link #getStore()} to access and query the store directly
@@ -106,7 +106,9 @@ import static org.reflections.util.Utils.*;
  * <p><p><p>For Javadoc, source code, and more information about Reflections Library, see http://github.com/ronmamo/reflections/
  */
 public class Reflections {
-    @Nullable public static Logger log = findLogger(Reflections.class);
+    //@Nullable public static Logger log = findLogger(Reflections.class);
+    @Nullable public static Logger log = null;
+
 
     protected final transient Configuration configuration;
     protected Store store;
